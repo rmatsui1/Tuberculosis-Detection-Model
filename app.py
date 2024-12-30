@@ -46,10 +46,10 @@ if selected == "DTSC 691 Project":
              training data. With an accuracy of 99%, the model will predict the classification based on binary output of a scale from 0 to 1.
              A confidence score of over 0.5 will result in a postive case and a score below 0.5 will result in a normal case. """)
     # Load the pre-trained model
-    model = tf.keras.models.load_model(r'C:\Users\Ricky\Desktop\School\Visualstudiocode\tuberculosisclassification2.h5')
+    model = tf.keras.models.load_model('tuberculosisclassification2.h5')
 
     # Importing training data for image selection
-    training_images = r'C:\Users\Ricky\Desktop\School\Visualstudiocode\trainingdatatb'
+    training_images = r'C:\Users\Ricky\Desktop\School\_repos\Tuberculosis-Detection-Model\trainingdatatweb'
     image_files = [f for f in os.listdir(training_images) if f.endswith(('.jpg', '.png', '.jpeg'))]
 
     # Function to preprocess images for prediction
