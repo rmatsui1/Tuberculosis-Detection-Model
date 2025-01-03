@@ -8,12 +8,16 @@ from PIL import Image
 import random
 import cv2
 from streamlit_option_menu import option_menu
+import json
 
 #References
 #Citations: Victoryhb (2022), Streamlit-option-menu, github. https://github.com/victoryhb/streamlit-option-menu
 
 #--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------#
 #Connecting to Google Cloud's API
+gcp_credentials = st.secrets["gcp_service_account"]
+with open("service_key.json", "w") as f:
+    json.dump(gcp_credentials, f)
 os.environ["GOOGLE_APPLICATION_CREDENTIALS"] = r"C:\Users\Ricky\Desktop\School\_repos\Tuberculosis-Detection-Model\ServiceKey_GoogleCloud.json"
 
 def download_model_from_gcs(bucket_name, model_file_name, local_path):
