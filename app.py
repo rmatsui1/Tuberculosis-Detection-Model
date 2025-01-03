@@ -17,7 +17,7 @@ import json
 #Connecting to Google Cloud's API
 gcp_credentials_path = "ServiceKey_GoogleCloud.JSON"
 
-os.environ["GOOGLE_APPLICATION_CREDENTIALS"] = gcp_credentials_path 
+os.environ["GOOGLE_APPLICATION_CREDENTIALS"] = r"C:\Users\Ricky\Desktop\School\_repos\Tuberculosis-Detection-Model\ServiceKey_GoogleCloud.json"
 
 def download_model_from_gcs(bucket_name, model_file_name, local_path):
     client = storage.Client()
