@@ -15,7 +15,7 @@ import json
 
 #--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------#
 #Connecting to Google Cloud's API
-gcp_credentials_path = "ServiceKey_GoogleCloud.json"
+gcp_credentials_path = "ServiceKey_GoogleCloud.JSON"
 
 os.environ["GOOGLE_APPLICATION_CREDENTIALS"] = gcp_credentials_path 
 
