@@ -20,11 +20,11 @@ gcp_credentials = st.secrets["gcp_service_account"]
 # Prepare the credentials JSON string
 credentials_json = json.dumps(gcp_credentials)
 
-with open("temp_service_account.json", "w") as f:
+with open("ServiceKey_GoogleCloud.json", "w") as f:
     f.write(credentials_json)
 
 # Set the environment variable for Google Cloud credentials
-os.environ["GOOGLE_APPLICATION_CREDENTIALS"] = "temp_service_account.json"
+os.environ["GOOGLE_APPLICATION_CREDENTIALS"] = "ServiceKey_GoogleCloud.json"
 
 def download_model_from_gcs(bucket_name, model_file_name, local_path):
     client = storage.Client()
