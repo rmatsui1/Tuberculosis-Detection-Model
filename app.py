@@ -17,8 +17,10 @@ import json
 # Retrieve credentials from Streamlit secrets
 gcp_credentials = st.secrets["gcp_service_account"]
 
+gcp_credentials_dict = dict(gcp_credentials)
+
 # Prepare the credentials JSON string
-credentials_json = json.dumps(gcp_credentials)
+credentials_json = json.dumps(gcp_credentials_dict)
 
 with open("ServiceKey_GoogleCloud.json", "w") as f:
     f.write(credentials_json)
