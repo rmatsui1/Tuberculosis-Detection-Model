@@ -20,13 +20,11 @@ gcp_credentials = st.secrets["gcp_service_account"]
 # Prepare the credentials JSON string
 credentials_json = json.dumps(gcp_credentials)
 
-# Set up the credentials using the json string (no need for local file path)
-from google.oauth2 import service_account
+with open("temp_service_account.json", "w") as f:
+    f.write(credentials_json)
 
-credentials = service_account.Credentials.from_service_account_info(gcp_credentials)
-
-# Initialize the Google Cloud Storage client with the credentials
-client = storage.Client(credentials=credentials, project=gcp_credentials["project_id"])
+# Set the environment variable for Google Cloud credentials
+os.environ["GOOGLE_APPLICATION_CREDENTIALS"] = "temp_service_account.json"
 
 def download_model_from_gcs(bucket_name, model_file_name, local_path):
     client = storage.Client()
