@@ -15,7 +15,7 @@ import json
 
 #--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------#
 # Retrieve credentials from Streamlit secrets
-gcp_credentials = st.secrets["gcp_service_account"]
+gcp_credentials = st.secrets["gcp"]["gcp_service_account"]
 
 gcp_credentials_dict = dict(gcp_credentials)
 
